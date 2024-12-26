@@ -58,6 +58,20 @@ public class Personne {
         System.out.println("Utilisateur ajouté avec succès !");
     }
 
+    private String  CIN( ){
+        System.out.print("Entrez le CIN : ");
+        String cin = input.next();
+        for (Utilisateur utilisateur : users) {
+            if (utilisateur.getUserCIN().equals(cin)) {
+                System.out.println("CIN est existe déjà");
+                cin = CIN();
+            }else {
+                break;
+            }
+        }
+        return cin;
+    }
+
     private Utilisateur getAjouterUtilisateur(){
         System.out.print("Entrez le nom : ");
         String nom = input.next();
@@ -65,8 +79,7 @@ public class Personne {
         System.out.print("Entrez l'âge : ");
         int age = input.nextInt();
 
-        System.out.print("Entrez le CIN : ");
-        String cin = input.next();
+        String cin = CIN();
 
         System.out.print("Entrez l'email : ");
         String email = input.next();
@@ -183,24 +196,6 @@ public class Personne {
             System.out.println("Utilisateur non trouvé.");
         }
     }
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

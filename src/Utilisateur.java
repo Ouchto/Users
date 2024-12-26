@@ -39,10 +39,10 @@ public class Utilisateur extends Personne {
     @Override
     public String toString() {
         return "--------------------------\n"+
-                "Nom :" + userNom + "\n" +
-                "Age :" + userAge + "\n" +
-                "CIN :" + userCIN + "\n" +
-                "Email :" + userEmail + "\n" +
-                "Role :" + role ;
+                "Nom :" + getUserNom() + "\n" +
+                "Age :" + getUserAge() + "\n" +
+                "CIN :" + getUserCIN() + "\n" +
+                "Email :" + getUserEmail() + "\n" +
+                "Role :" + getRole().getRoleName() ;
     }
 }
