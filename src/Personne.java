@@ -60,22 +60,22 @@ public class Personne {
 
     private Utilisateur getAjouterUtilisateur(){
         System.out.print("Entrez le nom : ");
-        String nom = input.nextLine();
+        String nom = input.next();
 
         System.out.print("Entrez l'âge : ");
         int age = input.nextInt();
 
         System.out.print("Entrez le CIN : ");
-        String cin = input.nextLine();
+        String cin = input.next();
 
         System.out.print("Entrez l'email : ");
-        String email = input.nextLine();
+        String email = input.next();
 
         System.out.print("Entrez le mot de passe : ");
-        String password = input.nextLine();
+        String password = input.next();
 
         System.out.print("Entrez le rôle : ");
-        String roleName = input.nextLine();
+        String roleName = input.next();
 
         Role role = new Role(roleName);
         return new Utilisateur(nom, age, cin, password, email, role);
@@ -94,6 +94,21 @@ public class Personne {
     }
 
     // Fonction pour Rechercher un utilisateur
+    public void rechercherUtilisateur() {
+        
+        System.out.print("Entrez le CIN de l'utilisateur à rechercher : ");
+        String cin = input.next();
+
+        for (Utilisateur utilisateur : users) {
+            if (utilisateur.getUserCIN().equals(cin)) {
+                System.out.println(utilisateur);
+                return;
+            }
+        }
+
+        System.out.println("Utilisateur non trouvé.");
+    }
+    
 
 
 
