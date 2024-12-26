@@ -165,7 +165,24 @@ public class Personne {
 
 
     // Fonction pour supprimer un utilisateur
+    public void supprimerUtilisateur() {
+        System.out.print("Entrez le CIN de l'utilisateur à supprimer : ");
+        String cin = input.nextLine();
+        boolean supprimer = false;
 
+        for (Utilisateur utilisateur : users) {
+            if (utilisateur.getUserCIN().equals(cin)) {
+                users.remove(utilisateur);
+                System.out.println("Utilisateur supprimé avec succès !");
+                supprimer = true;
+                break;
+            }
+        }
+
+        if (!supprimer ) {
+            System.out.println("Utilisateur non trouvé.");
+        }
+    }
 
 
     
