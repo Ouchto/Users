@@ -52,7 +52,13 @@ public class Personne {
     //fonction pour ajouter un Utilisateur
     public void ajouterUtilisateur() {
 
+        Utilisateur user = getAjouterUtilisateur();
+        users.add(user);
 
+        System.out.println("Utilisateur ajouté avec succès !");
+    }
+
+    private Utilisateur getAjouterUtilisateur(){
         System.out.print("Entrez le nom : ");
         String nom = input.nextLine();
 
@@ -72,11 +78,24 @@ public class Personne {
         String roleName = input.nextLine();
 
         Role role = new Role(roleName);
-        Utilisateur newUtilisateur = new Utilisateur(nom, age, cin, password, email, role);
-        users.add(newUtilisateur);
-
-        System.out.println("Utilisateur ajouté avec succès !");
+        return new Utilisateur(nom, age, cin, password, email, role);
     }
+
+    // Fonction pour afficher les utilisateurs
+    public void afficherUtilisateurs() {
+        if (users.isEmpty()) {
+            System.out.println("Aucun utilisateur à afficher.");
+            return;
+        }
+
+        for (Utilisateur utilisateur : users) {
+            System.out.println(utilisateur);
+        }
+    }
+
+    // Fonction pour Rechercher un utilisateur
+
+
 
 
 
