@@ -87,7 +87,7 @@ public class Personne {
         System.out.print("Entrez le mot de passe : ");
         String password = input.next();
 
-        System.out.print("Entrez le rôle : ");
+        System.out.print("Entrez le rôle (Administrateur /Employé /Client) : ");
         String roleName = input.next();
 
         Role role = new Role(roleName);
@@ -196,6 +196,4 @@ public class Personne {
             System.out.println("Utilisateur non trouvé.");
         }
     }
-
-
 }
