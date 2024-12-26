@@ -108,6 +108,66 @@ public class Personne {
 
         System.out.println("Utilisateur non trouvé.");
     }
+
+    // Fonction pour modifier un utilisateur
+    public void modifierUtilisateur() {
+        System.out.print("Entrez le CIN de l'utilisateur à modifier : ");
+        String cin = input.next();
+
+        for (Utilisateur utilisateur : users) {
+            if (utilisateur.getUserCIN().equals(cin)) {
+                int choix;
+
+                do {
+                    System.out.println("1. Modifier le nom");
+                    System.out.println("2. Modifier l'age");
+                    System.out.println("3. Modifier l'email");
+                    System.out.println("4. Modifier le Mot de passe");
+                    System.out.println("5. Modifier le role");
+                    System.out.println("6. Quitter");
+
+                    System.out.print("Entre votre choix : ");
+                    choix = input.nextInt();
+
+                    switch (choix){
+                        case 1:
+                            System.out.print("Entrez le nouveau nom : ");
+                            utilisateur.setUserNom(input.next());
+                            break;
+                        case 2:
+                            System.out.print("Entrez le nouvel âge : ");
+                            utilisateur.setUserAge(input.nextInt());
+                            break;
+                        case 3:
+                            System.out.print("Entrez le nouvel email : ");
+                            utilisateur.setUserEmail(input.next());
+                            break;
+                        case 4:
+                            System.out.print("Entrez le nouveau mot de passe : ");
+                            utilisateur.setUserPassword(input.next());
+                            break;
+                        case 5:
+                            System.out.print("Entrez le nouveau rôle : ");
+                            utilisateur.setRole(new Role(input.next()));
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            System.out.println("choix invalde");
+                    }
+                }while (choix != 6);
+                System.out.println("Utilisateur modifié avec succès !");
+                return;
+            }
+        }
+        System.out.println("Utilisateur non trouvé.");
+    }
+
+
+    // Fonction pour supprimer un utilisateur
+
+
+
     
 
 
