@@ -9,6 +9,8 @@ public class Personne {
     ArrayList<Utilisateur> users = new ArrayList<>();
     Scanner input = new Scanner(System.in);
 
+
+
     // --------------------------------------------- les constracteurs ---------------------------------------------
 
     public Personne() {}
@@ -18,6 +20,7 @@ public class Personne {
         this.userAge = userAge;
         this.userCIN = userCIN;
     }
+
 
 
     // --------------------------------------------- Les getters and setters ---------------------------------------------
@@ -45,6 +48,8 @@ public class Personne {
     public void setUserCIN(String userCIN) {
         this.userCIN = userCIN;
     }
+
+
 
 
     // --------------------------------------------- Les fonctions ---------------------------------------------
@@ -180,7 +185,7 @@ public class Personne {
     // Fonction pour supprimer un utilisateur
     public void supprimerUtilisateur() {
         System.out.print("Entrez le CIN de l'utilisateur à supprimer : ");
-        String cin = input.nextLine();
+        String cin = input.next();
         boolean supprimer = false;
 
         for (Utilisateur utilisateur : users) {

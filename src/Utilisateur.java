@@ -3,7 +3,6 @@ public class Utilisateur extends Personne {
     private String userEmail;
     private Role role;
 
-    public Utilisateur(){ }
 
     public Utilisateur(String userNom, int userAge, String userCIN, String userPassword, String userEmail, Role role) {
         super(userNom, userAge, userCIN);
