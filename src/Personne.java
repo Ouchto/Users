@@ -52,12 +52,12 @@ public class Personne {
 
 
 
-    // --------------------------------------------- Les fonctions ---------------------------------------------
+    // ================================================= Les fonctions =================================================
 
     //fonction pour ajouter un Utilisateur
     public void ajouterUtilisateur() {
 
-        Utilisateur user = getAjouterUtilisateur();
+        Utilisateur user = getAjouter();
         users.add(user);
 
         System.out.println("Utilisateur ajouté avec succès !");
@@ -77,7 +77,7 @@ public class Personne {
         return cin;
     }
 
-    private Utilisateur getAjouterUtilisateur(){
+    private Utilisateur getAjouter(){
         System.out.print("Entrez le nom : ");
         String nom = input.next();
 
@@ -186,19 +186,16 @@ public class Personne {
     public void supprimerUtilisateur() {
         System.out.print("Entrez le CIN de l'utilisateur à supprimer : ");
         String cin = input.next();
-        boolean supprimer = false;
+
 
         for (Utilisateur utilisateur : users) {
             if (utilisateur.getUserCIN().equals(cin)) {
                 users.remove(utilisateur);
                 System.out.println("Utilisateur supprimé avec succès !");
-                supprimer = true;
-                break;
+                return;
             }
         }
-
-        if (!supprimer ) {
             System.out.println("Utilisateur non trouvé.");
-        }
+
     }
 }
